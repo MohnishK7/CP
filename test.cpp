@@ -15,7 +15,7 @@ typedef pair<int, int> pi;
 #define endl '\n'
 
 const int M = 1e9 + 7;
-const int N = 1e7 + 10;
+const int N = 1e5 + 10;
 
 // long long fact[N];
 
@@ -40,9 +40,8 @@ const int N = 1e7 + 10;
 
 
 // }
-
-int hsh[N];
-
+int a[N];
+int pref[N];
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -56,26 +55,27 @@ int main() {
 
    // precomp();
 
+// normal way to calculate the sum of numbers in given range in an array
+   // O(Q*N) = 10 ^ 10 -> worst time complex
    int n;
    cin >> n;
-   int a[n];
-   for (int i = 0; i < n; i++) {
+   for (int i = 1; i <= n; i++) {
       cin >> a[i];
-      hsh[a[i]]++;
+      //prefix sum
+      pref[i] = pref[i - 1] + a[i]; // prefix sum ka array to calculate
    }
 
    int t;
    cin >> t;
    while (t--) {
-      int x;
-      cin >> x;
-      // int counter = 0;
-      // for (int i = 0; i < n; i++) {
-      //    if (a[i] == x) {
-      //       counter++;
-      //    }
+      int l, r;
+      cin >> l >> r;
+      // long long sum = 0;
+      // for (int i = l; i <= r; i++) {
+      //    sum += a[i];
       // }
-      cout << hsh[x] << '\n';
+      // cout << sum << '\n';
+      cout << pref[r] - pref[l - 1] << '\n'; // O(N) + O(Q) = 10 ^ 5
    }
    return 0;
 }
