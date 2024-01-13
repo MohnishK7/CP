@@ -1,0 +1,23 @@
+int arr[] = {1, 3, 3 , 4, 5, 7, 5};
+   int n = sizeof(arr) / sizeof(arr[0]);
+
+   int large = INT_MIN, second_large = INT_MIN;
+   int smallest = INT_MAX, second_small = INT_MAX;
+
+   for (int i = 0; i < n; i++) {
+      large = max(large, arr[i]);
+      smallest = min(smallest, arr[i]);
+   }
+
+   for (int i = 0; i < n; i++) {
+      if (arr[i] > second_large && arr[i] != large) {
+         second_large = arr[i];
+      }
+      if (arr[i] < second_small && arr[i] != smallest)
+         second_small = arr[i];
+   }
+   cout << second_large << endl;
+   cout << second_small;
+
+   return 0;
+}
