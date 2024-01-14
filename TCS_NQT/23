@@ -1,0 +1,22 @@
+//TCS NQT
+
+   string s;
+   cin >> s;
+   // string ans = "";
+   int n = s.length();
+   // hashmap
+   map<char, int> mpp;
+   for (int i = 0; i < n; i++) {
+      mpp[s[i]]++;
+   }
+   for (auto i : mpp) {
+      if (i.second > 1) {
+         cout << i.first << " - " << i.second << endl;
+      }
+   }
+
+
+
+
+   return 0;
+}
