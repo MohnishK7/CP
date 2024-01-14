@@ -1,0 +1,16 @@
+  //TCS NQT
+   string s;
+   getline(cin, s);
+   string n;
+   int m = s.length();
+
+   map<char, int> mpp;
+   for (int i = 0; i < m; i++) {
+      mpp[s[i]]++;
+   }
+   for (auto i : mpp) {
+      cout << i.first << " " << i.second << endl;
+   }
+
+   return 0;
+}
