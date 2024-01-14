@@ -1,0 +1,29 @@
+//TCS NQT
+
+   string s;
+   getline(cin, s);
+   int n = s.length();
+   int cnt = 0;
+   int maxi = INT_MIN;
+   int startIdx = 0;  // Starting index of the longest consecutive sequence
+   int endIdx = 0;    // Ending index of the longest consecutive sequence
+
+   for (int i = 0; i < n; i++) {
+      if (s[i] == ' ') {
+         cnt = 0;
+      }
+      else {
+         cnt++;
+         if (cnt > maxi) {
+            maxi = cnt;
+            endIdx = i;
+            startIdx = endIdx - maxi + 1;
+         }
+      }
+   }
+   for (int i = startIdx; i <= endIdx; i++) {
+      cout << s[i];
+   }
+
+   return 0;
+}
