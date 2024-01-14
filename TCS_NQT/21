@@ -1,0 +1,19 @@
+  //TCS NQT
+
+   string str;
+   cin >> str;
+   int n = str.length();
+   char ans;
+   int maxfreq = 0;
+   int count[256] = {0};
+   for (int i = 0; i < n; i++) {
+      count[str[i]]++;
+      if (count[str[i]] > maxfreq) {
+         maxfreq = count[str[i]];
+         ans = str[i];
+      }
+   }
+   cout << ans;
+
+   return 0;
+}
