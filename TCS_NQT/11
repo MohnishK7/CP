@@ -1,0 +1,22 @@
+//TCS NQT
+   int n;
+   cin >> n ;
+   vector<int> a(n);
+
+   for (int i = 0; i < n; i++) {
+      cin >> a[i];
+   }
+
+   map<int, int> mpp;
+   for (int i = 0; i < n; i++) {
+      mpp[a[i]]++;
+   }
+
+   for (auto &i : mpp) {
+      if (i.second > 1) {
+         cout << i.first << " ";
+      }
+   }
+
+   return 0;
+}
