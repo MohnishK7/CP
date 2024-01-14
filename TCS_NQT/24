@@ -1,0 +1,27 @@
+//TCS NQT
+
+   string s;
+   cin >> s;
+   string s1;
+   cin >> s1;
+   // string ans = "";
+   int n = s.length();
+   int m = s1.length();
+
+   // abd
+   int freq [26] = {0};
+   for (int i = 0; i < m; i++) {
+      freq[s1[i] - 'a']++;
+   }
+
+   // Remove characters from the first string that are present in the second string
+   string result = "";
+   for (int i = 0; i < n; i++) {
+      if (freq[s[i] - 'a'] == 0) {
+         result += s[i];
+      }
+   }
+   cout << result;
+
+   return 0;
+}
