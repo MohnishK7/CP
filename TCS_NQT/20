@@ -1,0 +1,53 @@
+//TCS NQT
+
+   // string s;
+   // cin >> s;
+   // string s1;
+   // cin >> s1;
+
+   // sort(s.begin(), s.end());
+   // sort(s1.begin(), s1.begin());
+
+   // bool flag = false;
+
+   // for (int i = 0; i < s.length(); i++) {
+   //    if (s[i] == s1[i]) {
+   //       flag = true;
+   //    }
+   // }
+   // if (flag) {
+   //    cout << "TRUE";
+   // }
+   // else {
+   //    cout << "FALSE";
+   // }
+
+   string s, s1;
+   cin >> s >> s1;
+   int frq[26] = {0};
+
+   bool flag = true;
+   for (int i = 0; i < s.length(); i++) {
+      frq[s[i] - 'A']++;
+   }
+
+   for (int i = 0; i < s1.length(); i++) {
+      frq[s[i] - 'A']--;
+   }
+
+   for (int i = 0; i < 26; i++) {
+      if (frq != 0) {
+         flag = false;
+      }
+   }
+   if (flag) {
+      cout << "TRUE";
+   }
+   else {
+      cout << "FALSE";
+   }
+
+
+
+   return 0;
+}
